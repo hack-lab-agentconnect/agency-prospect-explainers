@@ -1,0 +1,41 @@
+﻿AGENCY PROSPECT
+===============
+
+API object:   agencyProspects
+Records:      200
+Key fields:   name, slug, niche, city, region, phone, email, emailConfidence, aiFitScore, fitReason, techStack, label
+
+NARRATION SCRIPT
+-----------------
+
+[1] The object
+    One row, one real business we could win
+    A shop we might win as a client
+
+    An Agency Prospect is a single real-world business that we might be able to win as a client. We have two hundred of them in the database right now. If you click the object name at the top of this post, it opens straight into the CRM, so you can go and look while I talk. Think of a prospect as the very first card we deal. Not a person, not a conversation, not a deal. Just a business. The shop itself, sitting in a city, doing a kind of work we know how to sell into. Autobody shops. Detailing shops. Window tinting. Those are our niches. Every other object in this whole library hangs off a prospect, so this is the one to understand first.
+
+[2] What goes inside it
+    Who they are, where they are, how to reach them
+    Identity, location, contact, and our read on them
+
+    Inside a prospect row you will find the shop's name and a slug, which is a clean web-friendly version of that name. You will find the niche, so we know what kind of work they do, and the city and region, so we know where they are. Then the practical contact stuff: a phone number we can ring, and an email address with a confidence score attached, which tells us how sure we are that the address is genuinely theirs and not a guess. There is also an AI fit score out of one hundred, and a fit reason field which is the actual sentence explaining why we rated them that way. So you can always challenge the number. And a tech stack field, which is the list of tools we detected the shop is already running.
+
+[3] Why it matters
+    Everything downstream hangs off this object
+    Delete a prospect and half the database orphans
+
+    Why does this object matter so much? Because nothing else in the funnel exists without one underneath it. Leads attach to prospects. Calls get placed to the phone numbers stored here. Scripts and campaigns are aimed at the niches recorded here. This is the spine of the whole database. Get it wrong and the damage spreads in every direction. If somebody merges two shops badly, or deletes a prospect because it looks like a duplicate, you do not just lose one row. You orphan leads that had no other home, you leave calls pointing at nothing, and the reporting quietly starts lying to you. That is exactly why this is the object we protect most carefully.
+
+[4] Where it is used
+    The top of the funnel, and the dialer list
+    Found from public sites and listings, then worked
+
+    Where is it actually used in the day to day? We find these shops out in the wild, mostly from their own public websites and from the directory listings that the Agency Listings object tracks. Once a shop is in here, the fit score decides who gets worked first, so a high-scoring tinting shop in a good market jumps the queue over a low-scoring one. Then the phone number stored on the prospect row is literally the number the dialer calls. And as deals progress, the label field is how we mark where they sit. New. Working. Won. Lost. When you join the organisation and you know nothing else, open this object first. It is the map of who we are trying to reach.
+
+[5] Before you use it
+    What to check on your very first row
+    One row, and everything hangs off it
+
+    So here is what to actually do on your first day with this object. Open any single record and read it top to bottom before you judge anything. You are looking for four things. Does the name match a real business you could look up on a map. Is the phone number a real number, or is it one of those placeholder values that a scraper fills in when it cannot find anything. Is the fit score high, and does the reason next to it actually justify that score, or is it just saying the obvious. And is the label filled in, because that is what tells a human being whether this row has been looked at by a person or is still untouched machine output. If those four things are right, the row is ready to be worked. If the fit reason is vague, fix it in one sentence before you dial, because that sentence is what the caller reads first. A prospect row is not a spreadsheet entry. It is a bet that this business is worth an hour of somebody's time, and every field on it is either supporting that bet or quietly undermining it.
+
+
